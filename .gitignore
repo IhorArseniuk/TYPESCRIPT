@@ -1,0 +1,7 @@
+/.idea/
+
+# Project exclude paths
+/homeworks/Lesson1/main.d.ts
+/homeworks/Lesson1/main.d.ts.map
+/homeworks/Lesson1/main.js
+/homeworks/Lesson1/main.js.map
