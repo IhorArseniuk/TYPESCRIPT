@@ -1,7 +1,7 @@
 // task 7-1 #XjJuucOMR0 //
 
     class User{
-          constructor(private _id:number, private name:string, private surname:string, private email:string,private phone:string){
+          constructor(private _id:number, public name:string, private surname:string, private email:string,private phone:string){
     }
     get id():number{
               return this._id
@@ -122,10 +122,10 @@
     console.log(car1);
 }
 // task 7-8 #zg6Fifnqig //
-{
+
 
     class Cinderella{
-        constructor(public name:string,public age:number, public footSize:number){
+        constructor(public name:string,public age:number, public footSize:number,public love?:string){
     }}
 
     let girls=[
@@ -155,7 +155,7 @@
     prince.findCinderella(girls)
     console.log('')
     console.log(girls.find(Cinderella=>Cinderella.footSize===38))
-}
+
 // task 7-9 #gsKLAsNWM //
 
 const users3:User[] =[
@@ -173,7 +173,7 @@ declare global {
     }
 }
 
-Array.prototype.ownfilter = function<T>(this: T[], callback: (value: T) => boolean): T[] {
+Array.prototype.ownfilter = function<T>( callback: (value: T) => boolean): T[] {
     const result: T[] = [];
     for (let item of this) {
         if (callback(item)) {
@@ -182,3 +182,58 @@ Array.prototype.ownfilter = function<T>(this: T[], callback: (value: T) => boole
     }
     return result;
 };let filtered = users3.ownfilter(user => user.id % 2 === 0);
+
+declare global{
+    interface Array<T>{
+        myForEach(callbacks:(value:T)=>void):T[];
+    }
+}
+
+
+Array.prototype.myForEach=function<T>(callbacks:(value:T)=>void):T[]{
+    const result:T[]=[];
+    for(let i of this){
+        callbacks(i)
+        result.push(i)
+    }
+    return result
+};
+let userNames=users3.myForEach(function(n){ console.log( n.name.toUpperCase())})
+
+declare global{
+    interface Array<T>{
+        foreach(callback:(value:T)=>void):T[];
+    }
+}
+
+Array.prototype.foreach = function <T>( callback: (value: T)=>void):T[] {
+    let result:T[]=[];
+    for (let item of this) {
+        callback(item);
+        result.push(item)
+    }
+    return result;
+
+}
+console.log(girls.foreach(function(item) {
+    return item.love='popo'
+}));
+
+declare global{
+    interface Array<T>{
+        myfilter(callback:(value:T)=>boolean):T[]
+    }
+}
+Array.prototype.myfilter=function<T>(callback:(value:T)=>boolean):T[] {
+    let result:T[]=[];
+    for(let item of this){
+        if(callback(item))result.push(item);
+    }
+    return result;
+}
+console.log(girls.myfilter(function (item) {
+    if(item.footSize===38){ alert('cool')
+        return true  }
+       return false}
+
+));
