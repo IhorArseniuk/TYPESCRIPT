@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-flow:column;
+    align-items: center;
+}
+#text {
+    background-color:red;
+    width: 300px;
+    height: 200px;
+}
+#age-form{
+    margin-top:100px;
+}
+#age-butn{
+    border:1px solid gold;
+}
+#user-form{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+#pounds{
+    width:150px;
+    border:1px solid gold;
+    height:20px;
+    color:blue
+}
+#weight-form{
+    margin:50px 0 50px 0;
+}
+#table{
+    margin-bottom: 10px;
+}
+.user{
+    display:flex;
+    margin:20px 0 ;
+gap:10px;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+button{
+    width:100px;
+    height:20px;
+}

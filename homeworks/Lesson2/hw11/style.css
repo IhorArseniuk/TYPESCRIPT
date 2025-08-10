@@ -1,0 +1,47 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-cart{
+    border:5px solid goldenrod;
+    background-color:mediumturquoise;
+    margin:0 auto 20px auto;
+    padding:0 10px 0 10px;
+}
+.products-div{
+    border:1px solid blueviolet;
+    background-color:lightblue;
+    padding:0 10px 0 20px;
+}
+.product.img{
+    width:150px;
+    height:150px;
+}
+.total-price{
+    color:red;
+}
+.total-price:active{
+    color:yellow;
+}
+.discounted-price{
+    color:green;
+}
+.div-recipe{
+    padding: 0 5px 0 5px;
+    width:600px;
+    border:5px solid sandybrown;
+    background-color:gainsboro;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.div-recipe p{
+    font: auto 20px "Times New Roman";
+}
+.div-recipe img{
+    width:500px;
+    height:400px;
+}
